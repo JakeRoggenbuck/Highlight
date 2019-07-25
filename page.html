@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -9,33 +8,54 @@
     <title>Scatter</title>
   </head>
   <body>
+
     <ul>
-	    <li><h1 class="Title" >Scatter</h1></li>
-        <!--
-	    <div class="theme-switch-wrapper">
-          <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
-            <div class="slider round"></div>
-    	  </label>
-        </div>
-        -->
+	    <li><button id="Home" class="titleButtons" ><i class="fas fa-home"></i></button></li>
+        <li><button id="Settings" class="titleButtons" ><i class="fas fa-cog"></i></button></li>
+        <li><button id="Post" class="titleButtons" ><i class="fas fa-plus-circle"></i></button></li>
     </ul>
 
     <div id="allPosts" class="All">
+
     </div>
 
-    <h1 class="inputTitleStyle">Name</h1>
-    <input class="inputStyle" id="nameText" type="text" placeholder="Bob Bobbel">
-    <h1 class="inputTitleStyle">Title</h1>
-    <input class="inputStyle" id="titleText" type="text" placeholder="Spicy Title">
-    <h1 class="inputTitleStyle">Body</h1>
-    <input class="inputStyle" id="bodyText" type="text" placeholder="Today, a dark cloud approached my soul. In it I saw myself - all of my successes and all of my failures.">
-    <h1 class="inputTitleStyle">Category</h1>
-    <input class="inputStyle" id="categoryText" type="text" placeholder="Stories">
+    <div id="allSettings" class="allSettingsView">
 
-    <button class="postButtonStyle" id="postButton">Post</button>
+    </div>
+
+    <div id="newPost" class="newPosts">
+      <h1 class="inputTitleStyle">Name</h1>
+      <input class="inputStyle" id="nameText" type="text" placeholder="Bob Bobbel">
+      <h1 class="inputTitleStyle">Title</h1>
+      <input class="inputStyle" id="titleText" type="text" placeholder="Spicy Title">
+      <h1 class="inputTitleStyle">Body</h1>
+      <input class="inputStyle" id="bodyText" type="text" placeholder="Today, a dark cloud approached my soul. In it I saw myself - all of my successes and all of my failures.">
+      <h1 class="inputTitleStyle">Category</h1>
+      <input class="inputStyle" id="categoryText" type="text" placeholder="Stories">
+      <button class="postButtonStyle" id="postButton">Post</button>
+    </div>
 
     <script>
+
+      document.getElementById("Home").addEventListener("click",goHome);
+      document.getElementById("Settings").addEventListener("click",goSetings);
+      document.getElementById("Post").addEventListener("click",goPost);
+
+      function goHome(){
+        document.getElementById("allPosts").style.display = "block";
+        document.getElementById("allSettings").style.display = "none";
+        document.getElementById("newPost").style.display = "none";
+      }
+      function goSetings(){
+        document.getElementById("allSettings").style.display = "block";
+        document.getElementById("allPosts").style.display = "none";
+        document.getElementById("newPost").style.display = "none";
+      }
+      function goPost(){
+        document.getElementById("newPost").style.display = "block";
+        document.getElementById("allPosts").style.display = "none";
+        document.getElementById("allSettings").style.display = "none";
+      }
 
       document.getElementById("postButton").addEventListener("click",postFunc);
 
@@ -45,9 +65,10 @@
         var bodyTextVar = document.getElementById("bodyText").value
         var categoryTextVar = document.getElementById("categoryText").value
         google.script.run.post(nameTextVar, titleTextVar, bodyTextVar, categoryTextVar);
+
+        document.getElementById("allPosts").style.display = "block";
+        document.getElementById("newPost").style.display = "none";
       }
-
-
 
     <? for (var i = 0; i < Data.length; i++) { ?>
 

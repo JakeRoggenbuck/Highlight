@@ -1,22 +1,22 @@
 <style>
 * {
-   font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 :root {
-   --primary-color: #21a6f6;
-   --secondary-color: #536390;
-   --font-color: #424242;
-   --bg-color: #fff;
-   --heading-color: #292922;
+    --primary-color: #21a6f6;
+    --secondary-color: #536390;
+    --font-color: #424242;
+    --bg-color: #fff;
+    --heading-color: #292922;
 }
 
 [data-theme="dark"] {
-   --primary-color: #9A97F3;
-   --secondary-color: #818cab;
-   --font-color: #e1e1ff;
-   --bg-color: #161625;
-   --heading-color: #818cab;
+    --primary-color: #9A97F3;
+    --secondary-color: #818cab;
+    --font-color: #e1e1ff;
+    --bg-color: #161625;
+    --heading-color: #818cab;
 }
 
 .Title {
@@ -28,24 +28,29 @@ top: -16px;
 }
 
 body {
- background-color: var(--bg-color);
+  background-color: var(--bg-color);
 }
 
 .All {
- margin-right: 10%;
- margin-left: 10%;
- background-color: var(--primary-color);
+  margin-right: 10%;
+  margin-left: 10%;
+  background-color: var(--primary-color);
+}
+
+.newPosts {
+display: none;
+
 }
 
 .Cell {
- margin-right: 5%;
- margin-left: 5%;
- margin-top: 10px;
- margin-bottom: 10px;
- min-width: 90%;
- border-width: 0px;
- background-color: var(--bg-color);
- color: var(--font-color);
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-width: 90%;
+  border-width: 0px;
+  background-color: var(--bg-color);
+  color: var(--font-color);
 }
 
 .settingsButton {
@@ -56,199 +61,207 @@ background-color: var(--bg-color);
 border-color: var(--bg-color);
 }
 
+.titleButtons {
+font-size: 40px;
+color: var(--primary-color);
+text-align: center;
+background-color: var(--bg-color);
+border-color: var(--bg-color);
+}
+
 .h1TitleClass {
- color: var(--primary-color);
- position: relative;
- top: -16px;
- text-align: left;
+  color: var(--primary-color);
+  position: relative;
+  top: -16px;
+  text-align: left;
 }
 
 .h2NameClass {
- position: relative;
- top: -70px;
- text-align: right;
+  position: relative;
+  top: -70px;
+  text-align: right;
 }
 
 .h3BodyClass {
- position: relative;
- top: -76px;
- text-align: justify;
- font-size: 15px;
+  position: relative;
+  top: -76px;
+  text-align: justify;
+  font-size: 15px;
 }
 
 .h4CatagoryClass {
- position: relative;
- bottom: -10px;
- text-align: justify;
- font-size: 20px;
+  position: relative;
+  bottom: -10px;
+  text-align: justify;
+  font-size: 20px;
 }
 
 
 /*Simple css to style it like a toggle switch*/
 
 .theme-switch-wrapper {
- display: flex;
- align-items: center;
+  display: flex;
+  align-items: center;
 
- em {
-   margin-left: 10px;
-   font-size: 1rem;
- }
+  em {
+    margin-left: 10px;
+    font-size: 1rem;
+  }
 }
 .theme-switch {
- display: inline-block;
- height: 34px;
- position: relative;
- width: 60px;
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
 }
 
 .theme-switch input {
- display:none;
+  display:none;
 }
 
 .slider {
- background-color: #ccc;
- bottom: 0;
- cursor: pointer;
- left: 0;
- position: absolute;
- right: 0;
- top: 0;
- transition: .4s;
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
 }
 
 .slider:before {
- background-color: #fff;
- bottom: 4px;
- content: "";
- height: 26px;
- left: 4px;
- position: absolute;
- transition: .4s;
- width: 26px;
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
 }
 
 input:checked + .slider {
- background-color: #66bb6a;
+  background-color: #66bb6a;
 }
 
 input:checked + .slider:before {
- transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 .slider.round {
- border-radius: 34px;
+  border-radius: 34px;
 }
 
 .slider.round:before {
- border-radius: 50%;
+  border-radius: 50%;
 }
 
 
 /* stuff for the lits */
 
 ul{
-   list-style-type: none;
-   margin: 0;
-   padding: 0;
-   overflow: hidden;
-   background-color: var(--bg-color);
-   align-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    align-content: center;
 }
 
 li {
-   float: left;
-   border-right:1px solid var(--bg-color);
+    float: left;
+    border-right:1px solid var(--bg-color);
 }
 
 li a {
-   display: block;
-   text-align: center;
-   padding: 10px 12px;
-   text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 10px 12px;
+    text-decoration: none;
 }
 
 li a:hover {
-   display: block;
-   color: var(--primary-color)
-   text-align: center;
-   padding: 10px 12px;
-   text-decoration: none;
+    display: block;
+    color: var(--primary-color)
+    text-align: center;
+    padding: 10px 12px;
+    text-decoration: none;
 }
 
 .active {
-   background-color: var(--primary-color);
+    background-color: var(--primary-color);
 }
 
 /* Back button*/
 .back {
- display: inline-block;
- border-radius: 4px;
- background-color: var(--primary-color);
- border: none;
- color: #fff;
- text-align: center;
- font-size: 24px;
- padding: 6px;
- width: 160px;
- transition: all 0.5s;
- cursor: pointer;
- margin: 5px;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  padding: 6px;
+  width: 160px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
 }
 
 .back span {
- cursor: pointer;
- display: inline-block;
- position: relative;
- transition: 0.5s;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
 .back span:after {
- content: '<';
- position: absolute;
- opacity: 0;
- top: 0;
- left: 20px;
- transition: 0.5s;
+  content: '<';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 20px;
+  transition: 0.5s;
 }
 
 .back:hover span {
- padding-left: 50px;
+  padding-left: 50px;
 }
 
 .back:hover span:after {
- opacity: 1;
- left: 0;
+  opacity: 1;
+  left: 0;
 }
 
 
 .inputStyle {
- font-family: 'Roboto', sans-serif;
- color: #686868;
- background-color: #ffffff;
- font-size: 15px;
- border-radius: 6px;
- border-color: #262626;
- text-align: center;
- width: 60%;
- height: 60px;
- margin: 10px;
+  font-family: 'Roboto', sans-serif;
+  color: #686868;
+  background-color: #ffffff;
+  font-size: 15px;
+  border-radius: 6px;
+  border-color: #262626;
+  text-align: center;
+  width: 60%;
+  height: 60px;
+  margin: 10px;
 }
 .postButtonStyle {
- font-family: 'Roboto', sans-serif;
- color: #ededed;
- background-color: #21a6f6;
- font-size: 15px;
- border-radius: 6px;
- border-color: #21a6f6;
- text-align: center;
- width: 60%;
- height: 60px;
- margin: 10px;
+  font-family: 'Roboto', sans-serif;
+  color: #ededed;
+  background-color: #21a6f6;
+  font-size: 15px;
+  border-radius: 6px;
+  border-color: #21a6f6;
+  text-align: center;
+  width: 60%;
+  height: 60px;
+  margin: 10px;
 }
 .inputTitleStyle {
- font-family: 'Roboto', sans-serif;
- color: #262626;
- font-size: 35px;
+  font-family: 'Roboto', sans-serif;
+  color: #262626;
+  font-size: 35px;
 }
 </style>
