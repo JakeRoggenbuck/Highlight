@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <?!= include("page-style"); ?>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <meta charset="utf-8">
+    <title>Scatter</title>
+  </head>
+  <body>
+    <ul>
+	    <li><h1 class="Title" >Scatter</h1></li>
+        <!--
+	    <div class="theme-switch-wrapper">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+    	  </label>
+        </div>
+        -->
+    </ul>
+
+    <div id="allPosts" class="All">
+    </div>
+
+    <h1 class="inputTitleStyle">Name</h1>
+    <input class="inputStyle" id="nameText" type="text" placeholder="Bob Bobbel">
+    <h1 class="inputTitleStyle">Title</h1>
+    <input class="inputStyle" id="titleText" type="text" placeholder="Spicy Title">
+    <h1 class="inputTitleStyle">Body</h1>
+    <input class="inputStyle" id="bodyText" type="text" placeholder="Today, a dark cloud approached my soul. In it I saw myself - all of my successes and all of my failures.">
+    <h1 class="inputTitleStyle">Category</h1>
+    <input class="inputStyle" id="categoryText" type="text" placeholder="Stories">
+
+    <button class="postButtonStyle" id="postButton">Post</button>
+
+    <script>
+
+      document.getElementById("postButton").addEventListener("click",postFunc);
+
+      function postFunc(){
+        var nameTextVar = document.getElementById("nameText").value
+        var titleTextVar = document.getElementById("titleText").value
+        var bodyTextVar = document.getElementById("bodyText").value
+        var categoryTextVar = document.getElementById("categoryText").value
+        google.script.run.post(nameTextVar, titleTextVar, bodyTextVar, categoryTextVar);
+      }
+
+
+
+    <? for (var i = 0; i < Data.length; i++) { ?>
+
+      var singlePost = document.createElement("button");
+      singlePost.setAttribute('class', 'Cell');
+
+      var h1Title = document.createElement("h1");
+      h1Title.setAttribute('class', 'h1TitleClass');
+
+      var h2Name = document.createElement("h1");
+      h2Name.setAttribute('class', 'h2NameClass');
+
+      var h3Body = document.createElement("h1");
+      h3Body.setAttribute('class', 'h3BodyClass');
+
+      var h4Catagory = document.createElement("h1");
+      h4Catagory.setAttribute('class', 'h4CatagoryClass');
+
+      var nodeTitle = document.createTextNode(<?= Data[i][1];?>);
+      var nodeName = document.createTextNode(<?= Data[i][0];?>);
+      var nodeBody = document.createTextNode(<?= Data[i][2];?>);
+      var nodeCatagory = document.createTextNode(<?= Data[i][3];?>);
+
+      var elementAllPosts = document.getElementById("allPosts");
+
+      h1Title.appendChild(nodeTitle);
+      h2Name.appendChild(nodeName);
+      h3Body.appendChild(nodeBody);
+      h4Catagory.appendChild(nodeCatagory);
+
+      singlePost.appendChild(h1Title);
+      singlePost.appendChild(h2Name);
+      singlePost.appendChild(h3Body);
+      singlePost.appendChild(h4Catagory);
+
+      elementAllPosts.appendChild(singlePost);
+
+    <? } ?>
+    </script>
+  </body>
+</html>
