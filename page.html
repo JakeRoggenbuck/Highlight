@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -20,7 +21,13 @@
     </div>
 
     <div id="allSettings" class="allSettingsView">
-
+        <h1 class="darkModeLabel">Dark Mode</h1>
+        <div class="theme-switch-wrapper">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+    	  </label>
+        </div>
     </div>
 
     <div id="newPost" class="newPosts">
@@ -36,11 +43,9 @@
     </div>
 
     <script>
-
       document.getElementById("Home").addEventListener("click",goHome);
       document.getElementById("Settings").addEventListener("click",goSetings);
       document.getElementById("Post").addEventListener("click",goPost);
-
       function goHome(){
         document.getElementById("allPosts").style.display = "block";
         document.getElementById("allSettings").style.display = "none";
@@ -65,7 +70,6 @@
         var bodyTextVar = document.getElementById("bodyText").value
         var categoryTextVar = document.getElementById("categoryText").value
         google.script.run.post(nameTextVar, titleTextVar, bodyTextVar, categoryTextVar);
-
         document.getElementById("allPosts").style.display = "block";
         document.getElementById("newPost").style.display = "none";
       }
@@ -87,10 +91,22 @@
       var h4Catagory = document.createElement("h1");
       h4Catagory.setAttribute('class', 'h4CatagoryClass');
 
+      /*
+      var upButton = document.createElement("button");
+      upButton.setAttribute('class', 'up');
+
+      var upCount = document.createElement("h1");
+      upCount.setAttribute('class', 'count');
+
+      var downButton = document.createElement("button");
+      downButton.setAttribute('class', 'down');
+      */
+
       var nodeTitle = document.createTextNode(<?= Data[i][1];?>);
       var nodeName = document.createTextNode(<?= Data[i][0];?>);
       var nodeBody = document.createTextNode(<?= Data[i][2];?>);
       var nodeCatagory = document.createTextNode(<?= Data[i][3];?>);
+      //var nodeCount = document.createTextNode(<//?= Data[i][4];?>);
 
       var elementAllPosts = document.getElementById("allPosts");
 
@@ -99,14 +115,46 @@
       h3Body.appendChild(nodeBody);
       h4Catagory.appendChild(nodeCatagory);
 
+      //upCount.appendChild(nodeCount);
+
       singlePost.appendChild(h1Title);
       singlePost.appendChild(h2Name);
       singlePost.appendChild(h3Body);
       singlePost.appendChild(h4Catagory);
 
+      /*
+      singlePost.appendChild(upButton);
+      singlePost.appendChild(upCount);
+      singlePost.appendChild(downButton);
+      */
+
       elementAllPosts.appendChild(singlePost);
 
     <? } ?>
+
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
+}
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    }
+    else {        document.documentElement.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
+    }
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+
     </script>
   </body>
 </html>
