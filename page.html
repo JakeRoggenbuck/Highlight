@@ -6,12 +6,15 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <meta charset="utf-8">
-    <title>Scatter</title>
+    <title>Highlight</title>
+    <img src="HighlightLogo.png" alt="Highlight" height="42" width="42">
   </head>
   <body>
 
     <ul>
-	    <li><button id="Home" class="titleButtons" ><i class="fas fa-home"></i></button></li>
+        <li><img id="LogoDarkid" class="LogoDark"src="https://docs.google.com/drawings/d/e/2PACX-1vSb5tmTXa9aXmATWKdJFPM1Ti3zwdTx--tmhn3SIOUfKI7BZbbGQ1TzxXd8KSYaHDkXD_c-GvQlr7Ta/pub?w=168&h=110" alt="Highlight"></li>
+        <li><img id="LogoLightid" src="https://docs.google.com/drawings/d/e/2PACX-1vRDJiOHiDnvjhrOFT5vJxOYr4vnVMJ_361MacKpR3SRjiTNA_Ep7hMtm0iZ9OglneHQiczd-4HRkbSS/pub?w=168&h=110" alt="Highlight"></li>
+	      <li><button id="Home" class="titleButtons" ><i class="fas fa-home"></i></button></li>
         <li><button id="Settings" class="titleButtons" ><i class="fas fa-cog"></i></button></li>
         <li><button id="Post" class="titleButtons" ><i class="fas fa-plus-circle"></i></button></li>
     </ul>
@@ -133,27 +136,35 @@
     <? } ?>
 
     const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-const currentTheme = localStorage.getItem('theme');
+    const currentTheme = localStorage.getItem('theme');
 
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
 
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
+        if (currentTheme === 'dark') {
+            toggleSwitch.checked = true;
+            document.getElementById("LogoDarkid").style.display = "block";
+            document.getElementById("LogoLightid").style.display = "none";
+        }
     }
-}
 
-function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    }
-    else {        document.documentElement.setAttribute('data-theme', 'light');
-          localStorage.setItem('theme', 'light');
-    }
-}
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            document.getElementById("LogoDarkid").style.display = "block";
+            document.getElementById("LogoLightid").style.display = "none";
 
-toggleSwitch.addEventListener('change', switchTheme, false);
+        }
+        else {        document.documentElement.setAttribute('data-theme', 'light');
+              localStorage.setItem('theme', 'light');
+              document.getElementById("LogoDarkid").style.display = "none";
+              document.getElementById("LogoLightid").style.display = "block";
+        }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+
 
     </script>
   </body>
