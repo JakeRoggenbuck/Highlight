@@ -12,6 +12,10 @@
 	  function terms() {
 		    alert("by clicking ok I agree to terms of services\nTerms of services include but are not limited to\nHighlight does not own the content, the content is owned by the users thus highlight and highlights developers are not responsible for the content or users of highlight in any way");
 	  }
+
+    function refresh() {
+		    alert("To see your post refresh the page! It will be at the bottom");
+	  }
     </script>
   </head>
   <body onload="terms()">
@@ -47,7 +51,7 @@
       <input class="inputStyle" id="bodyText" type="text" placeholder="Today, a dark cloud approached my soul. In it I saw myself - all of my successes and all of my failures.">
       <h1 class="inputTitleStyle">Category</h1>
       <input class="inputStyle" id="categoryText" type="text" placeholder="Stories">
-      <button class="postButtonStyle" id="postButton">Post</button>
+      <button onclick="refresh()" class="postButtonStyle" id="postButton">Post</button>
     </div>
 
     <script>
