@@ -8,15 +8,19 @@
     --secondary-color: #536390;
     --font-color: #424242;
     --bg-color: #fff;
+    --bg2-color: #dedede;
     --heading-color: #292922;
+    --titleBar-color: #eee;
 }
 
 [data-theme="dark"] {
-    --primary-color: #9A97F3;
+    --primary-color: #674ea7;
     --secondary-color: #818cab;
     --font-color: #e1e1ff;
     --bg-color: #161625;
+    --bg2-color: #202040;
     --heading-color: #818cab;
+    --titleBar-color: #121216
 }
 
 .Title {
@@ -34,7 +38,7 @@ body {
 .All {
   margin-right: 10%;
   margin-left: 10%;
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
 }
 
 .LogoDark {
@@ -59,8 +63,27 @@ display: none;
   margin-bottom: 10px;
   min-width: 90%;
   border-width: 0px;
+  border-radius: 12px;
   background-color: var(--bg-color);
   color: var(--font-color);
+}
+
+.titleBar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+}
+
+.titleBarEnd {
+  overflow: hidden;
+  position: fixed;
+  top: -948px;
+  width: 100%;
+  height: 20px;
+  background-color: var(--titleBar-color);
+
 }
 
 .settingsButton {
@@ -76,7 +99,7 @@ font-size: 40px;
 color: var(--primary-color);
 text-align: center;
 background-color: var(--bg-color);
-border-color: var(--bg-color);
+border-width: 0px;
 }
 
 .h1TitleClass {

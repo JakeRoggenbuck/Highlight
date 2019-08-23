@@ -20,14 +20,6 @@
   </head>
   <body onload="terms()">
 
-    <ul>
-        <li><img id="LogoDarkid" class="LogoDark"src="https://docs.google.com/drawings/d/e/2PACX-1vSb5tmTXa9aXmATWKdJFPM1Ti3zwdTx--tmhn3SIOUfKI7BZbbGQ1TzxXd8KSYaHDkXD_c-GvQlr7Ta/pub?w=168&h=110" alt="Highlight"></li>
-        <li><img id="LogoLightid" src="https://docs.google.com/drawings/d/e/2PACX-1vRDJiOHiDnvjhrOFT5vJxOYr4vnVMJ_361MacKpR3SRjiTNA_Ep7hMtm0iZ9OglneHQiczd-4HRkbSS/pub?w=168&h=110" alt="Highlight"></li>
-	      <li><button id="Home" class="titleButtons" ><i class="fas fa-home"></i></button></li>
-        <li><button id="Settings" class="titleButtons" ><i class="fas fa-cog"></i></button></li>
-        <li><button id="Post" class="titleButtons" ><i class="fas fa-plus-circle"></i></button></li>
-    </ul>
-
     <div id="allPosts" class="All">
 
     </div>
@@ -52,6 +44,16 @@
       <h1 class="inputTitleStyle">Category</h1>
       <input class="inputStyle" id="categoryText" type="text" placeholder="Stories">
       <button onclick="refresh()" class="postButtonStyle" id="postButton">Post</button>
+    </div>
+
+    <div class="titleBar">
+         <ul>
+            <li><img id="LogoDarkid" class="LogoDark"src="https://docs.google.com/drawings/d/e/2PACX-1vSb5tmTXa9aXmATWKdJFPM1Ti3zwdTx--tmhn3SIOUfKI7BZbbGQ1TzxXd8KSYaHDkXD_c-GvQlr7Ta/pub?w=168&h=110" alt="Highlight"></li>
+            <li><img id="LogoLightid" src="https://docs.google.com/drawings/d/e/2PACX-1vRDJiOHiDnvjhrOFT5vJxOYr4vnVMJ_361MacKpR3SRjiTNA_Ep7hMtm0iZ9OglneHQiczd-4HRkbSS/pub?w=168&h=110" alt="Highlight"></li>
+	          <li><button id="Home" class="titleButtons" ><i class="fas fa-home"></i></button></li>
+            <li><button id="Settings" class="titleButtons" ><i class="fas fa-cog"></i></button></li>
+            <li><button id="Post" class="titleButtons" ><i class="fas fa-plus-circle"></i></button></li>
+         </ul>
     </div>
 
     <script>
